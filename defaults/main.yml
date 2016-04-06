@@ -1,0 +1,6 @@
+---
+# Default variables - inventory or playbook overrides will be respected
+
+# BARC specific variables
+php5_postgresql9_barc_role_name: php5_postgresql9
+php5_postgresql9_barc_role_version: 0.1.0
