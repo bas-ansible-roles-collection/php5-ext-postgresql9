@@ -19,7 +19,8 @@ This role uses manual and automated testing to ensure its features work as adver
  
 ## Dependencies
  
-* None
+* [**bas-ansible-roles-collection.php5**](https://galaxy.ansible.com/bas-ansible-roles-collection/php5)
+  * Minimum version: *0.1.0*
  
 More information on role dependencies is available in the 
 [BARC General Documentation](
