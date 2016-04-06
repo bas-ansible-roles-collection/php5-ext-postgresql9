@@ -26,4 +26,7 @@
 # These tests ensure overall processes can be completed to give a valid result
 # E.g. checking a web-server serves a web-page ensures the relevant packages and configuration files work together
 
+- include: functionality/postgresql-roles.yml
+- include: functionality/postgresql-databases.yml
+- include: functionality/postgresql-tables.yml
 - include: functionality/barc-manifest.yml

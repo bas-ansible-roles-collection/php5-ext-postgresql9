@@ -1,0 +1,20 @@
+---
+# Tests a table PostgreSQL can be created within a database
+
+# Note: These functionality tests are cumulative - the database test relies on database users being created etc.
+
+- name: list tables within application database
+  command: psql -d app -c "\dt"
+  changed_when: false
+  register: php5_postgresql9_test_app_database_tables
+  become_user: postgres
+
+- name: create a test table within a database for an application
+  command: psql -d app -c "CREATE TABLE sample (id SERIAL PRIMARY KEY, name VARCHAR(128));"
+  when: "'sample' not in php5_postgresql9_test_app_database_tables.stdout"
+  become_user: postgres
+
+- name: add row to test table within a database for an application
+  command: psql -d app -c "INSERT INTO sample (name) VALUES ('someone');"
+  when: "'sample' not in php5_postgresql9_test_app_database_tables.stdout"
+  become_user: postgres

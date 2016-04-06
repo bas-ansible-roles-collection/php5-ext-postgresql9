@@ -6,6 +6,7 @@
   remote_user: "{{ privileged_remote_user }}"
   become: yes
   roles:
+    - bas-ansible-roles-collection.postgresql9-server
     - ../../../php5-postgresql9
   tasks:
     - include: ../tasks/main.yml
