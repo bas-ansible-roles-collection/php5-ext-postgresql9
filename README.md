@@ -15,7 +15,8 @@ Bridging role to use PHP 5 with PostgreSQL databases
  
 ## Quality Assurance
  
-This role uses manual and automated testing to ensure its features work as advertised. See [here](tests/README.md) for more information.
+This role uses manual and automated testing to ensure its features work as advertised. 
+See [here](tests/README.md) for more information.
  
 ## Dependencies
  
