@@ -1,4 +1,4 @@
-# PHP 5 PostgreSQL 9 (php5-ext-postgresql9) - Testing
+# PHP 5 PostgreSQL 9 (`php5-ext-postgresql9`) - Testing
 
 ## Overview
 

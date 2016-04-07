@@ -1,4 +1,4 @@
-# PHP 5 PostgreSQL 9 (php5-ext-postgresql9)
+# PHP 5 PostgreSQL 9 (`php5-ext-postgresql9`)
  
 Master: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-ext-postgresql9/branches/master/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-ext-postgresql9)
 Develop: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-ext-postgresql9/branches/develop/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-ext-postgresql9)
