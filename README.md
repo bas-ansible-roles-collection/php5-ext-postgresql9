@@ -1,7 +1,7 @@
-# PHP 5 PostgreSQL 9 (php5-postgresql9)
+# PHP 5 PostgreSQL 9 (php5-ext-postgresql9)
  
-Master: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-postgresql9/branches/master/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-postgresql9)
-Develop: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-postgresql9/branches/develop/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-postgresql9)
+Master: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-ext-postgresql9/branches/master/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-ext-postgresql9)
+Develop: [![Build Status](https://semaphoreci.com/api/v1/bas-ansible-roles-collection/php5-ext-postgresql9/branches/develop/badge.svg)](https://semaphoreci.com/bas-ansible-roles-collection/php5-ext-postgresql9)
  
 Bridging role to use PHP 5 with PostgreSQL databases
  
@@ -69,7 +69,7 @@ https://antarctica.hackpad.com/BARC-Overview-and-Policies-SzcHzHvitkt#:h=Role-Ma
   become: yes
   vars: []
   roles:
-    - bas-ansible-roles-collection.php5-postgresql9
+    - bas-ansible-roles-collection.php5-ext-postgresql9
 ```
  
 ### Tags
@@ -83,14 +83,14 @@ https://antarctica.hackpad.com/BARC-Overview-and-Policies-SzcHzHvitkt#:h=Appendi
  
 ### Variables
  
-#### *php5_postgresql9_barc_role_name*
+#### *php5_ext_postgresql9_barc_role_name*
  
 * **MUST NOT** be specified
 * Specifies the name of this role within the BAS Ansible Roles Collection (BARC) used for setting local facts
 * See the *BARC roles manifest* section for more information
 * Example: `php5_postgresql9` 
  
-#### *php5_postgresql9_barc_role_version*
+#### *php5_ext_postgresql9_barc_role_version*
  
 * **MUST NOT** be specified
 * Specifies the name of this role within the BAS Ansible Roles Collection (BARC) used for setting local facts

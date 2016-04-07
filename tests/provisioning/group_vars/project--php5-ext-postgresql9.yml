@@ -2,7 +2,7 @@
 # These variables override those defined by roles
 
 # App variables - apply to a single project
-app_project: "php5-postgresql9"
+app_project: "php5-ext-postgresql9"
 app_project_repository: ""
 app_project_directory: "/srv/apps/{{ app_project }}"
 

@@ -6,6 +6,6 @@
 - name: create a non-privileged postgresql role for an application
   postgresql_user:
                name="app"
-           password="{{ pgp5_postgresql9_test_postgresql_testing_app_role_password }}"
+           password="{{ pgp5_ext_postgresql9_test_postgresql_testing_app_role_password }}"
               state=present
   become_user: postgres
