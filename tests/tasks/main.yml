@@ -19,6 +19,7 @@
 # These tests mirror individual tasks to ensure they execute correctly
 # E.g. creating a user, installing the right package or generating a valid configuration file
 
+- include: atomic/install-ext-pgsql.yml
 - include: atomic/register-role.yml
 
 # Functionality tests
@@ -29,4 +30,5 @@
 - include: functionality/postgresql-roles.yml
 - include: functionality/postgresql-databases.yml
 - include: functionality/postgresql-tables.yml
+- include: functionality/php5-postgresql.yml
 - include: functionality/barc-manifest.yml

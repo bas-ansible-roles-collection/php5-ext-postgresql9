@@ -1,0 +1,24 @@
+---
+# Tests a connection can be made to PostgreSQL from PHP
+
+# Note: These functionality tests are cumulative - the database test relies on database users being created etc.
+
+- name: determine if postgresql extension is enabled
+  shell: php -i | grep -q 'PostgreSQL Support => enabled'
+  changed_when: False
+
+- name: upload test script
+  copy:
+     src=../../provisioning/files/scripts/php-postgresql.php
+    dest=/tmp/php-postgresql.php
+    mode=0775
+
+- name: run test script
+  command: php /tmp/php-postgresql.php
+  changed_when: false
+  register: php5_postgresql9_test_pgsql_test_script
+
+- name: assert test script executed correctly
+  assert:
+    that:
+      - "'all good' in php5_postgresql9_test_pgsql_test_script.stdout"

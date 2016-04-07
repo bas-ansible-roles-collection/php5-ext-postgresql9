@@ -14,6 +14,11 @@
   when: "'sample' not in php5_postgresql9_test_app_database_tables.stdout"
   become_user: postgres
 
+- name: set owner of test table within a database for an application
+  command: psql -d app -c "ALTER TABLE sample OWNER TO app;"
+  when: "'sample' not in php5_postgresql9_test_app_database_tables.stdout"
+  become_user: postgres
+
 - name: add row to test table within a database for an application
   command: psql -d app -c "INSERT INTO sample (name) VALUES ('someone');"
   when: "'sample' not in php5_postgresql9_test_app_database_tables.stdout"

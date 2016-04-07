@@ -11,7 +11,7 @@ Bridging role to use PHP 5 with PostgreSQL databases
  
 ## Overview
  
-* ...
+* Installs PostgreSQL PHP extension
  
 ## Quality Assurance
  
