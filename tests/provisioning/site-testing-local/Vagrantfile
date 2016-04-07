@@ -30,16 +30,32 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Options using 'node' apply to a single VM only
     # For BAS projects, the hostname **MUST** be the FQDN and comply with WSR-1, e.g. project-environment-purpose.v.m
     # the identifier **MUST** be the same as the hostname, without a domain, e.g. project-environment-purpose
-  config.vm.define "php5-postgresql9-test-ubuntu-basic" do |node|
-    node.vm.hostname = "php5-postgresql9-test-ubuntu-basic.v.m"
+  config.vm.define "php5-ext-postgresql9-test-ubuntu-basic" do |node|
+    node.vm.hostname = "php5-ext-postgresql9-test-ubuntu-basic.v.m"
 
     # Base box
     node.vm.box = "antarctica/trusty"
     node.vm.box_version = "~> 3.3"
   end
 
-  config.vm.define "php5-postgresql9-test-centos-basic" do |node|
-    node.vm.hostname = "php5-postgresql9-test-centos-basic.v.m"
+  config.vm.define "php5-ext-postgresql9-test-centos-basic" do |node|
+    node.vm.hostname = "php5-ext-postgresql9-test-centos-basic.v.m"
+
+    # Base box
+    node.vm.box = "antarctica/centos7"
+    node.vm.box_version = "~> 0.7"
+  end
+
+  config.vm.define "php5-ext-postgresql9-test-ubuntu-system-only" do |node|
+    node.vm.hostname = "php5-ext-postgresql9-test-ubuntu-system-only.v.m"
+
+    # Base box
+    node.vm.box = "antarctica/trusty"
+    node.vm.box_version = "~> 3.3"
+  end
+
+  config.vm.define "php5-ext-postgresql9-test-centos-system-only" do |node|
+    node.vm.hostname = "php5-ext-postgresql9-test-centos-system-only.v.m"
 
     # Base box
     node.vm.box = "antarctica/centos7"

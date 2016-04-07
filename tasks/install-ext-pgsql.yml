@@ -1,0 +1,38 @@
+---
+# Install PostgreSQL PHP extension
+
+# The PostgreSQL extension uses the same package name on Ubuntu for non-system and system only package sources
+
+- name: install postgresql extension - Ubuntu
+  apt:
+                 pkg={{ item }}
+        update_cache=yes
+    cache_valid_time=3600
+               state=present
+  with_items:
+    - php5-pgsql
+  when: ansible_distribution == "Ubuntu"
+
+# If using non-system sources (preferred)
+
+- name: install postgresql extension from non-system sources - CentOS
+  yum:
+             pkg={{ item }}
+    update_cache=yes
+           state=present
+  with_items:
+    - php56w-pgsql
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == true or BARC_use_non_system_package_sources == 'True')
+
+# If using system-sources only
+
+- name: install postgresql extension from non-system sources - CentOS
+  yum:
+             pkg={{ item }}
+    update_cache=yes
+           state=present
+  with_items:
+    - php-pgsql
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == false or BARC_use_non_system_package_sources == 'False')

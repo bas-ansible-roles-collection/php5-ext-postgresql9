@@ -1,5 +1,4 @@
-
-PHP 5 PostgreSQL 9 (php5-postgresql9) - Testing
+# PHP 5 PostgreSQL 9 (`php5-ext-postgresql9`) - Testing
 
 ## Overview
 
@@ -21,7 +20,7 @@ The *Testing* environment tests a single scenario:
 
 The *Local Testing* environment tests multiple scenarios:
 
-1. ...
+1. Installs PostgreSQL PHP extension and verifies a connection can be made to a PostgreSQL database
 
 **Note:** *Local Testing* environments test scenarios on all operating systems this role supports. Services providing
 *Testing* environments may limit which operating system are available (e.g. SemaphoreCI only supports Ubuntu Trusty).
@@ -33,7 +32,7 @@ To bring up a local testing environment:
 1. Ensure you meet all the
 [requirements](https://paper.dropbox.com/doc/BAS-Base-Project-Pristine-Base-Flavour-Usage-ZdMdHHzf8xB4HjxcNuDXa#:h=Environment---local-testing)
 to bring up a local testing environment
-2. `$ cd php5-postgresql9/tests/provisioning/site-testing-local`
+2. `$ cd php5-ext-postgresql9/tests/provisioning/site-testing-local`
 3. `$ vagrant up`
 4. `$ cd ..`
 5. `$ ansible-playbook site-testing-local.yml`
@@ -51,11 +50,11 @@ Note: This role uses *SeamphoreCI* as its Continuous Integration service.
 
 To run tests using a local testing environment:
 
-1. `$ cd php5-postgresql9/tests/provisioning`
+1. `$ cd php5-ext-postgresql9/tests/provisioning`
 2. `$ ansible-playbook app-test-local.yml`
 
 To run tests using a remote testing environment:
 
 * No action is needed other than committing changes to the role repository, tests will then run automatically
 
-Results for these tests can be found [here](https://semaphoreci.com/bas-ansible-roles-collection/php5-postgresql9).
+Results for these tests can be found [here](https://semaphoreci.com/bas-ansible-roles-collection/php5-ext-postgresql9).

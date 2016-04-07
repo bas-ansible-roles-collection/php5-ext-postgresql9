@@ -1,0 +1,45 @@
+---
+# Tests the PostgreSQL PHP extension is installed
+
+# The PostgreSQL extension uses the same package name on Ubuntu for non-system and system only package sources
+
+- name: determine if postgresql extension package is installed - Ubuntu
+  command: dpkg -s php5-pgsql
+  changed_when: False
+  register: php5_postgresql9_test_fact_pgsql_extension_is_installed_ubuntu
+  when: ansible_distribution == "Ubuntu"
+- name: assert postgresql extension package is installed
+  assert:
+    that:
+      - "'install ok installed' in php5_postgresql9_test_fact_pgsql_extension_is_installed_ubuntu.stdout"
+  when: ansible_distribution == "Ubuntu"
+
+# If using non-system sources (preferred)
+
+- name: determine if postgresql extension package is installed from non-system sources - CentOS
+  command: rpm -qa
+  changed_when: False
+  register: php5_postgresql9_test_fact_pgsql_extension_is_installed_non_system_centos
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == true or BARC_use_non_system_package_sources == 'True')
+- name: assert postgresql extension package is installed from non-system sources - CentOS
+  assert:
+    that:
+      - "'-pgsql' in php5_postgresql9_test_fact_pgsql_extension_is_installed_non_system_centos.stdout"
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == true or BARC_use_non_system_package_sources == 'True')
+
+# If using system-sources only
+
+- name: determine if postgresql extension package is installed from system-only sources - CentOS
+  command: rpm -qa
+  changed_when: False
+  register: php5_postgresql9_test_fact_pgsql_extension_is_installed_system_only_centos
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == true or BARC_use_non_system_package_sources == 'True')
+- name: assert postgresql extension package is installed from system-only sources - CentOS
+  assert:
+    that:
+      - "'-pgsql' in php5_postgresql9_test_fact_pgsql_extension_is_installed_system_only_centos.stdout"
+  when: ansible_distribution == "CentOS" and
+    (BARC_use_non_system_package_sources == true or BARC_use_non_system_package_sources == 'True')

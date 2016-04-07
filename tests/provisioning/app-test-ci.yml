@@ -5,7 +5,19 @@
   hosts: localhost
   remote_user: "{{ privileged_remote_user }}"
   become: yes
+  pre_tasks:
+    - name: install prerequisites for testing in continuous integration environment
+      apt:
+                     pkg={{ item }}
+            update_cache=yes
+        cache_valid_time=3600
+                   state=present
+      with_items:
+        - ufw
+    - name: enable UFW
+      ufw: state=enabled
   roles:
-    - ../../../php5-postgresql9
+    - bas-ansible-roles-collection.postgresql9-server
+    - ../../../php5-ext-postgresql9
   tasks:
     - include: ../tasks/main.yml

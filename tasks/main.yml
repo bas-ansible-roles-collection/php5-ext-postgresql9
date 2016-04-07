@@ -1,5 +1,11 @@
 ---
-# ...
+# Installs PostgreSQL PHP extension
+
+- include: install-ext-pgsql.yml
+  when: php5_use_curl == true
+  tags:
+    - BARC_INSTALL
+    - BARC_INSTALL_PACKAGES
 
 - include: register-role.yml
   tags:
